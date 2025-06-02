@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: api-prever-faturamento
+    runtime: python
+    buildCommand: ""
+    startCommand: python run.py
+    plan: free

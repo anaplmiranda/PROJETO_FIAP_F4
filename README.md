@@ -56,6 +56,9 @@ GET /prever?data_final=YYYY-MM-DD
 Exemplo: /prever?data_final=2025-05-20
 Retorno: Previsão do próximo valor de fechamento da AAPL
 
+http://35.198.47.221:5000/apidocs/
+
+
 📊 Avaliação do Modelo
 O modelo foi avaliado com as seguintes métricas:
 
@@ -74,6 +77,4 @@ A previsão considera os 45 dias úteis anteriores à data solicitada.
 
 Não há necessidade de baixar datasets manualmente.
 
-📄 Licença
-Este projeto está licenciado sob a Licença MIT. Consulte o arquivo LICENSE para mais detalhes.
-
+📄 

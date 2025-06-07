@@ -56,7 +56,7 @@ MODELO/
 |df_finance.csv                                    # Base de dados histórica da ação AAPL usada na modelagem
 ```
 
-## 📁 Documentacao
+## 📁 Documentação
 
 ```
 Swagger: http://35.198.47.221:5000/apidocs/

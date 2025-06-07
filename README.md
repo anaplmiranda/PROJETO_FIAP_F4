@@ -38,28 +38,49 @@ Este projeto aplica redes neurais recorrentes do tipo **LSTM (Long Short-Term Me
 
 ## 📁 Estrutura do Projeto
 
-python -m venv env
-source env/bin/activate  # Linux/MacOS
-# ou
-.\env\Scripts\activate   # Windows
+```
+API_PRECOS/
+├── app/
+│   ├── routes/               # Rotas da API
+│   └── utils/                # Utilitários e helpers
+├── env/                      # Ambiente virtual Python
+├── requirements.txt          # Dependências do projeto
+└── run.py                    # Arquivo de inicialização
+
+MODELO/
+|FIAP_CHALLENGE_4_analise_exploratoria.ipynb       # Notebook com a análise exploratória dos dados históricos da AAPL
+|modelo_LSTM_45dias.ipynb                          # Notebook com o desenvolvimento e treinamento do modelo LSTM
+|modelo_45dias.h5                                  # Arquivo do modelo LSTM treinado salvo no formato HDF5
+|scaler_45dias.pkl                                 # Objeto de scaler MinMaxScaler treinado, usado para normalização dos dados
+|modelo_prod_lstm_45dias.py                        # Script FastAPI para servir o modelo em produção
+|df_finance.csv                                    # Base de dados histórica da ação AAPL usada na modelagem
+```
+
+## 📁 Documentacao
+
+```
+Swagger: http://35.198.47.221:5000/apidocs/
+Deploy: http://35.198.47.221
+Server: Google Cloud
+
+```
 
 
-pip install -r requirements.txt
+🔗 Endpoints
 
-uvicorn modelo_prod_lstm_45dias:app --reload
+### Previsão
+- `POST /prever_com_arquivo`: Previsão utilizando arquivo csv
+- `POST /prever_com_data`: Previsão utilizando data final
 
-curl "http://localhost:8000/prever?data_final=2025-05-20"
+## 🔐 Autenticação
+
+A API utiliza autenticação basica.
+
+User test: admin
+Senha test: secret
 
 
-🔗 Endpoint Principal
-GET /prever?data_final=YYYY-MM-DD
-Exemplo: /prever?data_final=2025-05-20
-Retorno: Previsão do próximo valor de fechamento da AAPL
-
-http://35.198.47.221:5000/apidocs/
-
-
-📊 Avaliação do Modelo
+## 📊 Avaliação do Modelo
 O modelo foi avaliado com as seguintes métricas:
 
 MAE – Mean Absolute Error
@@ -70,11 +91,9 @@ MAPE – Mean Absolute Percentage Error
 
 O melhor desempenho foi obtido utilizando uma janela de 45 dias com média móvel de 3 dias (MM3).
 
-ℹ️ Observações
-A coleta dos dados é feita automaticamente pelo yfinance a partir da API.
+## ℹ️ Observações
+A coleta dos dados da rota prever_com_data é feita automaticamente pelo yfinance a partir da API.
 
 A previsão considera os 45 dias úteis anteriores à data solicitada.
 
 Não há necessidade de baixar datasets manualmente.
-
-📄 

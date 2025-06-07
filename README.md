@@ -43,6 +43,9 @@ API_PRECOS/
 ├── app/
 │   ├── routes/               # Rotas da API
 │   └── utils/                # Utilitários e helpers
+├── modelo/                   # Modelos modelo_45dias.h5 e scaler_45dias.pkl
+├── uploads/                  # Salvar arquivos
+├── logs                      # Salvar logs das rotas
 ├── env/                      # Ambiente virtual Python
 ├── requirements.txt          # Dependências do projeto
 └── run.py                    # Arquivo de inicialização

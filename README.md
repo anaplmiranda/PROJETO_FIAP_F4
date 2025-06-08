@@ -75,6 +75,8 @@ Server: Google Cloud
 - `POST /prever_com_arquivo`: Previsão utilizando arquivo csv
 - `POST /prever_com_data`: Previsão utilizando data final
 
+http://35.198.47.221:5000/apidocs/
+
 ## 🔐 Autenticação
 
 A API utiliza autenticação basica.
